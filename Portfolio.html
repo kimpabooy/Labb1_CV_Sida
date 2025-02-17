@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Creepster&display=swap');
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Portfolio</h1>
+    <nav class="menu">
+      <a href="index.html" title="Går till Homescreen"><button>Hem</button></a>
+      <a href="VemÄrJag.html" title="Går till Vem är jag"><button>Vem är jag</button></a>
+      <a href="Portfolio.html" title="Går till Portfolio"><button>Portfolio</button></a>
+      <a href="Sociala medier.html" title="Går till Sociala medier"><button>Sociala medier</button></a>
+      <a href="Tidigare arbete.html" title="Går till Söker"><button>Tidigare arbete</button></a>
+    </nav>
+  </header>
+  <br>
+
+  <ul>
+    <h1 class="project-header">Tidigare project</h1>
+    <div id="wrapper">
+      <p><a class="button" href="#popup1">Datatyps Hantering</a></p>
+      <p><a class="button" href="#popup2">Databas Hantering</a></p>
+      <p><a class="button" href="#popup3">Objekt Hantering</a></p>
+      <p><a class="button" href="#popup4">InternetBank</a></p>
+    </div>
+  </ul>
+
+  <div id="popup1" class="overlay">
+    <div class="popup">
+      <h2>Bankomaten</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="content">
+        <p>Ett program som är skapat under Hösten 2024 där kunskap om datatyper låg i fokus .</p>
+        <p><a href="https://github.com/kimpabooy/Bankomaten">Länk till: Bankomat Applikationen</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="popup2" class="overlay">
+    <div class="popup">
+      <h2>Databasen</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="content">
+        <p>Ett program som är skapat våren 2025 där jag visar kunskap om ADO.Net och Entity Framework.</p>
+        <p><a href="https://github.com/kimpabooy/NewSchoolDb">Länk till: Databas Appen</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="popup3" class="overlay">
+    <div class="popup">
+      <h2>Resturangen</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="content">
+        <p>Ett program som är skapat vintern 2024 där fokuset låg i att hantera objekt.</p>
+        <p><a href="https://github.com/kimpabooy/Labb-4---Generic-collections">Länk till: Resturang Appen</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="popup4" class="overlay">
+    <div class="popup">
+      <h2>Internetbanken</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="content">
+        <p>Ett grupparbete där vi vidareutvecklade vår tidigare applikation banken. Uppgiften var en kombination av OOP
+          och Agil metodik</p>
+        <p><a href="https://github.com/kimpabooy/NewSchoolDb">Länk till: Rebel Aliance Bank</a></p>
+      </div>
+    </div>
+  </div>
+
+  <section class="portfolio-images">
+    <img src="images/atm.png" alt="">
+    <img src="images/database.png" alt="">
+    <img src="images/restaurant.png" alt="">
+    <img src="images/internet-banking.png" alt="">
+  </section>
+
+
+</body>
+
+</html>
