@@ -170,6 +170,7 @@ p {
 #wrapper {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     /* block-size: 5%; */
 }
@@ -211,39 +212,47 @@ p {
 }
 
 .overlay {
-    position: absolute;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background: rgba(0,0,0,0.5);
-    transition: opacity 200ms;
-    visibility: hidden;
     opacity: 0;
-    &.light {
-    background: rgba(255,255,255,0.5);
-    }
-    .cancel {
+    transition: opacity 500ms;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -ms-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+}
+
+.cancel {
     position: absolute;
     width: 100%;
     height: 100%;
     cursor: default;
-    }
-    &:target {
-    visibility: visible;
-    opacity: 1;
-    }
 }
 
+
+.overlay:target {
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    }
+
 .popup {
-    margin: 75px auto;
-    padding: 20px;
-    background: #fff3f3;
-    border: 1px solid #666;
-    border-radius: 15px;
-    width: 1000px;
-    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    display: flex;
     position: relative;
+    margin: 75px;
+    padding: 20px;
+    border: 1px solid #666;
+    background: #fff3f3;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
@@ -259,31 +268,21 @@ p {
     font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
 }
 
-.close {    
-position: absolute;
-width: 200px;
-height: 20px;
-top: 20px;
-right: 20px;
-opacity: 0.8;
-transition: all 200ms;
-font-size: 24px;
-font-weight: bold;
-text-decoration: none;
-color: #666;
--webkit-transition: all 200ms;
--moz-transition: all 200ms;
--ms-transition: all 200ms;
--o-transition: all 200ms;
+.close {
+    position: absolute;
+    top:1px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #820202;
+}
+}
 
-.content {
-    max-height: 1000px;
-    overflow: auto;
-    }
-    p {
-    margin: 0 0 1em;
-    &:last-child {
-        margin: 0;
-    }
-    }
-}}
+.content a {
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
