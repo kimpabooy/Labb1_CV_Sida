@@ -14,19 +14,19 @@ body {
     background-position: center;
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 450px)
 { 
-    html{ width: 500px;
+    html{ width: 450px;
     overflow: auto;
     }
 }
+
 @media screen and (max-height: 400px)
 {
     html{ height: 400px;
     overflow: auto;
     }
 }
-
 
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -54,7 +54,6 @@ h1 {
 .menu button {
     padding: 10px;
     border: none;
-    /* background-color: #ffffff; */
     background-image: linear-gradient(to bottom, #ffffff, #ada3a3);
     color: rgb(0, 0, 0);
     border-radius: 50px;
@@ -150,21 +149,24 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: scale(0.6);
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    -o-transform: scale(0.6);
+    transform: scale(0.3);
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    -o-transform: scale(0.3);
 }
-.project-header {
 
+.project-header {
     border-style: none;
     box-shadow: none;
 }
 
+footer {
+    margin-top: 90%;
+}
+
 
 /* /////////////////////////// Model Pop-up //////////////////////////////////////// */
-
 
 
 #wrapper {
@@ -235,7 +237,6 @@ p {
     cursor: default;
 }
 
-
 .overlay:target {
     visibility: visible;
     display: flex;
@@ -257,15 +258,12 @@ p {
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    .light&
-    {
-    border-color: #aaa;
-    box-shadow: 0 2px 10px rgba(61, 0, 0, 0.25);
-    }
-    h2 {
-    margin-top: 0;
-    color: #000000;
-    font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+}
+
+.popup h2 {
+margin-top: 0;
+color: #000000;
+font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
 }
 
 .close {
@@ -276,7 +274,6 @@ p {
     font-weight: bold;
     text-decoration: none;
     color: #820202;
-}
 }
 
 .content a {
