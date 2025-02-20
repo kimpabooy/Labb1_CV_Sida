@@ -167,10 +167,6 @@ p {
     -ms-transform: scale(0.8);
     -o-transform: scale(0.8);
 }
-/*behöver vara 450px bred*/
-.portfolio_text {
-    margin-inline: auto;
-}
 
 .portfolio-images {
     display: flex;
