@@ -14,17 +14,23 @@ body {
     background-position: center;
 }
 
-@media screen and (max-width: 450px)
-{ 
-    html{ width: 450px;
-    overflow: auto;
+@media (max-width: 600px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
     }
-}
-
-@media screen and (max-height: 400px)
-{
-    html{ height: 400px;
-    overflow: auto;
+    nav ul li {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
+    .content {
+        padding: 10px;
+    }
+    img {
+        max-width: 70%;
+        height: auto;
     }
 }
 
