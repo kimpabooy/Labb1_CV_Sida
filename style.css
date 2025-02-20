@@ -35,8 +35,12 @@ body {
     .popup{
         display: flex;
         flex-direction: column;
-        max-height: auto;
-    }
+        transform: scale(85%);
+        -webkit-transform: scale(85%);
+        -moz-transform: scale(85%);
+        -ms-transform: scale(85%);
+        -o-transform: scale(85%);
+}
 }
 
 h1 {
