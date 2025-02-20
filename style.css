@@ -32,6 +32,10 @@ body {
         max-width: 70%;
         height: auto;
     }
+    .popup{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 h1 {
