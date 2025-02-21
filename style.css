@@ -119,6 +119,7 @@ p {
 
 .WhoAmI {
     margin-inline: auto;
+    margin: 10px;
 }
 
 .social-menu {
