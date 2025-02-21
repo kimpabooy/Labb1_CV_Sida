@@ -34,6 +34,7 @@ body {
 
     .popup{
         display: flex;
+        margin: 50px;
         flex-direction: column;
         transform: scale(85%);
         -webkit-transform: scale(85%);
