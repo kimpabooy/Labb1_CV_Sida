@@ -27,14 +27,10 @@ body {
     }
     p {
         max-width: 75ch;
-        font-size: 25px;;
+        font-size: 25px;
     }
     .content {
         padding: 10px;
-    }
-
-    .portfolio_text {
-        font-size: 20px;
     }
 
     img {
