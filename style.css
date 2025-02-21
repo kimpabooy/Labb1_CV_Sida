@@ -34,24 +34,10 @@ body {
 
     .popup{
         display: flex;
-        margin: 50px;
         flex-direction: column;
-        transform: scale(85%);
+        font-size: 50px;
+        transform: scale(75%);
     }
-
-
-
-        /* nav ul {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-    } */
-    /* nav ul li {
-        margin: 0;
-        padding: 10px;
-        text-align: center;
-    } */
-
 
 }
 
@@ -183,7 +169,6 @@ main {
     flex-grow: 1;
 }
 
-
 footer p {
     margin-top: auto;
     background-color: transparent;
@@ -264,9 +249,9 @@ footer p {
 }
 
 .popup h2 {
-margin-top: 0;
-color: #000000;
-font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+    margin-top: 0;
+    color: #000000;
+    font-family: 'creepster';
 }
 
 .close {
