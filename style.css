@@ -123,6 +123,7 @@ p {
 
 .social_logo:hover {
     cursor: pointer;
+    transform: scale(1.2);
 }
 
 .nellylogo, .essitylogo, .campuslogo {
