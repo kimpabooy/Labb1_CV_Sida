@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url('images/trä-bakgrund.jpg');
+    background-image: url("images/trä-bakgrund.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -115,6 +115,7 @@ li {
 a.button{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 10px;
 }
 
@@ -165,6 +166,17 @@ p {
     width: 15rem;
 }
 
+.job-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 15rem;
+}
+
+
 .img-container {
     display: flex;
     justify-content: center;
@@ -212,14 +224,22 @@ footer p {
     border-style: none;
 }
 
-/* /////////////////////////// Model Pop-up //////////////////////////////////////// */
+/* div#wrapper{
+    background-color: #0000007d;
+    flex: content;
 
+    margin: 50px;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+} */
 
 #wrapper {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap;;
     justify-content: center;
+    gap: 15px;
 }
 
 .button {

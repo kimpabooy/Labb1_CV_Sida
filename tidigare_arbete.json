@@ -1,0 +1,17 @@
+[
+    {
+        "company": "Nelly.com",
+        "image": "images/nelly.PNG",
+        "description": "2012 - Anställd på Ehandelsföretaget Nelly.com. Där jobbade jag som både orderplockare och problemlösare. Som problemlösare, kallad Suspens hade jag en allt-i-allo-roll där jag fick lära mig att hantera och lösa de problem som uppstod på lagret. Oavsett vilken typ av problem som dök upp var det Suspens som ansvarade för att hitta en lösning. Arbetet passade mig perfekt, då jag dagligen fick använda min problemlösningsförmåga, något jag verkligen brinner för. Jag var tvungen att byta jobb 2020 när lagret flyttade till ett annat ort."
+    },
+    {
+        "company": "Essity",
+        "image": "images/essity.png",
+        "description": "2021 - Anställd på Essity, ett större lager i Falkenberg, där jag har rollen som AGV-operatör (truckförare / robotansvarig). Rollen som AGV-operatör har likheter med mitt tidigare arbete, då den innebär stort ansvar och att man kontinueligt är en supportfunktion i företaget. Jag hjälper allt ifrån maskinoperatörer till internationella aktörer, samtidigt som jag arbetar som truckförare."
+    },
+    {
+        "company": "Campus",
+        "image": "images/campus_varberg_logo_ny.png",
+        "description": "2024 - Började studera en tvåårig utbildning till Systemutvecklare på Yrkeshögskolan Campus i Varberg."
+    }
+]
