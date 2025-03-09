@@ -14,29 +14,31 @@ body {
     background-position: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 740px) {
     p {
-        max-width: 75ch;
-        font-size: 25px;
+    max-width: 75ch;
+    font-size: 25px;
     }
 
     img {
-        max-width: 70%;
-        height: auto;
+    max-width: 70%;
+    height: auto;
     }
+
     h1 {
-        font-size: 1.5em;
+    font-size: 1.5em;
     }
 
-    .content {
-        padding: 10px;
+    nav.menu{
+    align-items: center;
+    flex-direction: row;
     }
 
-    .popup{
-        display: flex;
-        flex-direction: column;
-        font-size: 50px;
-        transform: scale(75%);
+    ul.handle_list_button {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
     }
 }
 
@@ -106,10 +108,6 @@ article img {
     transform: scale(1.2);
     color: black;
     box-shadow: 0px 0px 20px rgb(255, 255, 255, 1);
-}
-
-li {
-    list-style: none;
 }
 
 a.button{
@@ -217,29 +215,18 @@ body {
 main {
     flex-grow: 1;
 }
+li {
+    list-style: none;
+}
 
+footer {
+    flex-grow: 1;
+}
 footer p {
     margin-top: auto;
     background-color: transparent;
     border-style: none;
-}
-
-/* div#wrapper{
-    background-color: #0000007d;
-    flex: content;
-
-    margin: 50px;
-    padding: 20px;
-    display: flex;
-    gap: 15px;
-} */
-
-#wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;;
-    justify-content: center;
-    gap: 15px;
+    box-shadow: none;
 }
 
 .button {
@@ -266,65 +253,82 @@ footer p {
     box-shadow: 0px 0px 50px rgb(255, 255, 255, 1);
 }
 
-.overlay {
-    visibility: hidden;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.5);
-    opacity: 0;
-    transition: opacity 500ms;
-}
-
-.cancel {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    cursor: default;
-}
-
-.overlay:target {
-    visibility: visible;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    }
-
-.popup {
-    display: flex;
-    position: relative;
-    margin: 75px;
-    padding: 20px;
-    border: 1px solid #666;
-    background: #fff3f3;
-    border-radius: 15px;
-    box-shadow: 0 0 50px rgba(0,0,0,0.5);
-}
-
-.popup h2 {
-    margin-top: 0;
-    color: #000000;
-    font-family: 'creepster';
-}
-
-.close {
-    position: absolute;
-    top:1px;
-    right: 10px;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #820202;
-}
-
 .content a {
     text-decoration: none;
 }
 
 .content a:hover {
     text-decoration: underline;
+}
+
+div#wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px;
+    border-style: solid;
+    border-width: 5px;
+    box-shadow: 0px 0px 50px rgb(255, 255, 255, 1);;
+}
+
+.handle_list_button{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_open_modal_popup {
+    padding: 10px 15px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-style: solid;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    width: auto;
+}
+
+.button_open_modal_popup:hover {
+    background-color: #edf0f32a;
+}
+
+
+/* Modalens bakgrund */
+.modal {
+    display: none; /* Dold som standard */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Mörk bakgrund */
+}
+
+/* Modalens innehåll */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+  /* Stängningsknappen */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
 }

@@ -55,40 +55,113 @@ document.addEventListener("DOMContentLoaded", function() {
     easter.addEventListener("click", function() {
         document.querySelector("body").style.backgroundImage = "url(https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3pnNmVmanJpZml6NDFwbmgxZXhkdTJrZmRjYnU0ZWN1NHNkNGZ6ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fmkYSBlJt3XjNF6p9c/giphy.gif)";
     })
+    //////////////////////////////////////////////////////////////////////////////////////////////////
     
-    
-    //Hämtar mina GitHub-projekt.
-    const githubRepo = document.getElementById("wrapper");
-    githubRepo.innerHTML = "<p>Laddar projekt...</p>";
-    fetch(GITHUB_REPOS)
+//     //Hämtar mina GitHub-projekt.
+//     const githubRepo = document.getElementById("wrapper");
+//     githubRepo.innerHTML = "<p>Laddar projekt...</p>";
+//     fetch(GITHUB_REPOS)
+//     .then(response => response.json())
+//     .then(repos => {
+//         githubRepo.innerHTML = "";
+//         console.log(repos);
+//         repos.forEach(repo => {
+//             githubRepo.innerHTML += `
+//             <li>
+//             <a class="button_open_modal_popup">${repo.name}</a>
+//             <a class="button" href="${repo.html_url}" target="_blank">
+//             ${repo.name}
+//             </a>
+//             <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
+//             </li>
+//             `;
+//         });
+//     })
+//     .catch(error => {
+//         githubRepo.innerHTML = "<p>Kunde inte ladda projekt.</p>";
+//         console.error("Fel vid hämtning av GitHub-projekt:", error);
+//     });
+// });
+
+
+const githubRepo = document.getElementById("wrapper");
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modal-title");
+const modalDescription = document.getElementById("modal-description");
+const modalLink = document.getElementById("modal-link");
+const closeButton = document.querySelector(".close-button");
+
+// Lägg till en laddningsindikator
+githubRepo.innerHTML = "<p>Laddar projekt...</p>";
+
+fetch(GITHUB_REPOS)
     .then(response => response.json())
     .then(repos => {
-        githubRepo.innerHTML = "";
-        console.log(repos);
+        githubRepo.innerHTML = ""; // Rensa laddningsmeddelandet
+        const ul = document.createElement("ul");
+        ul.className = "handle_list_button";
+
         repos.forEach(repo => {
-            githubRepo.innerHTML += `
-            <li>
-            <a class="button" href="${repo.html_url}" target="_blank">
-            ${repo.name}
-            </a>
-            <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
-            </li>
-            `;
+            const li = document.createElement("li");
+
+            // Skapa knapp för att öppna modal
+            const modalButton = document.createElement("button");
+            
+            modalButton.className = "button_open_modal_popup";
+            modalButton.textContent = repo.name;
+            
+            // När knappen trycks, visa laddning
+            modalButton.addEventListener("click", () => {
+                // Visa en laddningsindikator när knappen trycks
+                modalTitle.textContent = "Laddar...";
+                modalDescription.textContent = "Vänligen vänta, vi hämtar information...";
+                modalLink.href = "#";
+                modal.style.display = "block";
+
+                // Simulera en kort fördröjning innan den riktiga informationen visas
+                setTimeout(() => {
+                    modalTitle.textContent = repo.name;
+                    modalDescription.textContent = repo.description || "Ingen beskrivning tillgänglig.";
+                    modalLink.href = repo.html_url;
+                }, 2000); // Laddningstid (500 ms)
+            });
+
+            li.appendChild(modalButton);
+            ul.appendChild(li);
         });
+
+        githubRepo.appendChild(ul);
     })
     .catch(error => {
         githubRepo.innerHTML = "<p>Kunde inte ladda projekt.</p>";
         console.error("Fel vid hämtning av GitHub-projekt:", error);
     });
+
+// Stäng modalen när man klickar på X-knappen
+closeButton.addEventListener("click", () => {
+    modal.style.display = "none";
 });
+
+// Alternativ stängning klicka utanför modulen för att stänga
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+});
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// <button popovertarget="mydiv" popovertargetaction="show">${repo.name}</button>
     
     const hackerGif = document.getElementById("hacker");
     hackerGif.addEventListener("click", function(){
         document.querySelector("body").style.backgroundImage = "url(images/abstrakt-bakgrund.jpg)";
-    })
-   
-   
-   
+    });
+
     // // // 1. Ladda in arbetsplatser från JSON fil test
     //     fetch("tidigare_arbete.json")
     //         .then(response => response.json())
@@ -106,8 +179,4 @@ document.addEventListener("DOMContentLoaded", function() {
 //         })
 //         .catch(error => console.error("Fel vid hämtning av jobbdata:", error));
 
-
-        ////////////////////////////////////////////////////////////////////////////////
-
-
-        
+////////////////////////////////////////////////////////////////////////////////
